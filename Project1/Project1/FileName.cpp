@@ -12,6 +12,9 @@ bool Perevirka(const char* str) {
         }
         else if (str[i] == ')') {
             a--;
+            if (a < 0) {
+                return false;
+            }
         }
     }
     if (a==0) {
@@ -24,5 +27,10 @@ bool Perevirka(const char* str) {
 int main() {
     char str[50];
     cin.getline(str, 50);
-    
+    if (Perevirka(str) == 1) {
+        cout << "True " << endl;
+    }
+    else {
+        cout << "False" << endl; 
+    }
 }
